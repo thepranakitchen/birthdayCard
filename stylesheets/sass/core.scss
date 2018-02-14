@@ -1,0 +1,74 @@
+//CORE SASS File
+
+// PLACEHOLDER
+
+%cardDimensions{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  height: 100%;
+  width:  100%;
+}
+
+%flexCenter{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body{
+  height: 100vh;
+  width: 100vw;
+  perspective: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #FBDA61;
+  background-image: linear-gradient(135deg, #FBDA61 0%, #FF5ACD 100%);
+}
+
+.card{
+  height: 400px;
+  width:  800px;
+  position: relative;
+  transform-style: preserve-3d;
+  border-radius: 5px;
+  box-shadow: 3px 3px 15px rgba(0,0,0,.25);
+  transition: 1.25s;
+
+  &:hover{
+    transform: rotateX(180deg);
+  }
+}
+
+.front{
+  @extend %cardDimensions;
+  //@extend %flexCenter;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Pangolin', cursive;
+  font-size: 4em;
+  text-shadow: 3px 3px 5px rgba(0,0,0,.5);
+  background:url('imgs/valentine.jpg') no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #FFFFFF;
+  //z-index: 2;
+  backface-visibility: hidden;
+
+
+}
+
+.back{
+  @extend %cardDimensions;
+  @extend %flexCenter;
+  font-family: 'Pangolin', cursive;
+  font-size: 5.1em;
+  background:url('imgs/justKidding.jpg') no-repeat;
+  background-position: center;
+  background-color: #FFFFFF;
+  //z-index: 1;
+  transform: rotateX(180deg);
+  backface-visibility: hidden;
+}
